@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleble=no">
+    <title>e Ticket Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="alertForPC" class="hide">
+        <p>このページはスマートフォン専用です<br>スマートフォンから開いてください。</p>
+    </div>
+    <div id="ticketInfoWindow" class="fixed flexContentsV">
+        <div class="otherInfo flexContentsH">
+            <p>※playground(株)とは一切関係ありません</p>
+        </div>
+        <div class="ticketInfoBackground flexContentsV flexSpaceFill">
+            <div style="background-color: #aaa; width: 100%; aspect-ratio: 1.78; border-top-left-radius: 1rem; border-top-right-radius: 1rem;"></div>
+            <div class="ticketInfo flexContentsV flexSpaceFill flexboxSpace">
+                <div class="standardTextBox">
+                    <p class="eventName">電子チケットシミュレーター</p>
+                    <p>20XX/XX/XX(X)</p>
+                    <p>開場時間 XX:XX 開演時間 XX:XX</p>
+                    <p>シミュレーションアリーナ</p>
+                    <!--<input type="text" id="inputEventName" placeholder="イベント名を入力"><br>
+                    <input type="date" id="inputDate"><br>
+                    <label for="openTime">開場時間<input type="time" name="openTime" id="inputOpenTime">
+                    <label for="startTime">開演時間<input type="time" name="startTime" id="inputStartTime">
+                    <br><input type="text" id="inputVenue" placeholder="会場名を入力">-->
+                </div>
+                <div class="standardTextBox">
+                    <p>SS席</p>
+                    <p>1列39番</p>
+                    <!--<input type="text" id="inputSeatType" placeholder="席種を入力"><br>
+                    <input type="text" id="inputSeatNumber" placeholder="席番を入力">-->
+                </div>
+                <div class="standardTextBox">
+                    <div class="horizontalLine"></div>
+                </div>
+                <div class="flexSpaceFill"></div>
+                <div class="buttonBox">
+                    <div id="openTicket" class="button positiveButton">
+                        <p>チケットを提示</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ticketWindow" class="fixed flexContentsV hide">
+        <div class="modalTitle flexContentsH">
+            <div id="closeTicket" class="modalCloseButton"><p style="font-size: 1.5rem;">&times;</p></div>
+            <p>チケットを提示</p>
+        </div>
+        <div class="modalBackground flexContentsV flexSpaceFill flexboxSpace">
+            <div class="standardTextBox dummyUsedTicketCounts">
+                <p>使用済みチケット : 0 / 1</p>
+            </div>
+            <div class="standardTextBox">
+                <div class="horizontalLine"></div>
+            </div>
+            <div class="standardTextBox">
+                <p class="eventName">電子チケットシミュレーター</p>
+            </div>
+            <div class="standardTextBox">
+                <p>20XX/XX/XX(X) 開場 XX:XX 開演 XX:XX</p>
+            </div>
+            <div class="flexSpaceFill"></div>
+            <div id="swipearea" class="flexContentsH">
+                <p>こちらの画面をスタッフに提示しないでください。<br>※スクリーンショットはご利用いただけません。</p>
+            </div>
+        </div>
+    </div>
+    <div id="ticketUseConfirmWindow" class="fixed flexContentsV hide">
+        <div class="modalBackground flexContentsV flexboxSpace">
+            <div class="standardTextBox">
+                <p>チケットを使用済みにしますか？</p>
+            </div>
+            <div class="standardTextBox">
+                <p>この操作は元に戻せません。<br>会場でのご使用はお控えください。</p>
+            </div>
+            <div class="buttonBox">
+                <div id="ticketUseCancel" class="button negativeButton">
+                    <p>キャンセル</p>
+                </div>
+                <div id="ticketUseApply" class="button positiveButton">
+                    <p>使用済にする</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
